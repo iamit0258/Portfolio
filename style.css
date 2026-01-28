@@ -36,8 +36,10 @@
     --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
-html {
-    scroll-behavior: smooth;
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -45,6 +47,11 @@ body {
     background: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.7;
+}
+
+main {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 a {
@@ -154,7 +161,6 @@ img {
     border-radius: 100px;
     padding: 0.75rem 0;
     transition: var(--transition);
-    overflow: hidden;
 }
 
 .scroll-progress-container {
@@ -231,6 +237,10 @@ img {
     gap: 2rem;
 }
 
+.mobile-cv {
+    display: none;
+}
+
 .nav-link {
     color: var(--text-secondary);
     font-weight: 600;
@@ -238,6 +248,9 @@ img {
     padding: 0.5rem 0;
     position: relative;
     letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .nav-link::after {
@@ -477,13 +490,13 @@ img {
 }
 
 .decoration-1 {
-    width: 320px;
-    height: 320px;
+    width: min(320px, 90vw);
+    height: min(320px, 90vw);
 }
 
 .decoration-2 {
-    width: 360px;
-    height: 360px;
+    width: min(360px, 95vw);
+    height: min(360px, 95vw);
     opacity: 0.1;
 }
 
@@ -500,8 +513,9 @@ img {
 }
 
 .about-image-placeholder {
-    width: 400px;
-    height: 400px;
+    width: min(400px, 100%);
+    height: auto;
+    aspect-ratio: 1/1;
     background: transparent;
     border: none;
     display: flex;
@@ -620,7 +634,7 @@ img {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 1.5rem;
 }
 
@@ -968,6 +982,7 @@ img {
     border-radius: 10px;
     border: 1px solid var(--border-color);
     transition: var(--transition);
+    text-align: left;
 }
 
 .contact-card:hover {
@@ -1061,21 +1076,38 @@ img {
 
     .nav-menu {
         position: fixed;
-        top: 60px;
-        left: 0;
-        right: 0;
+        top: 80px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) translateY(-150%);
+        width: 90%;
         background: var(--bg-secondary);
         flex-direction: column;
         padding: 2rem;
         gap: 1rem;
-        transform: translateY(-150%);
         transition: var(--transition);
-        border-bottom: 1px solid var(--border-color);
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        text-align: center;
+        box-shadow: var(--shadow-lg);
     }
 
     .nav-menu.active {
-        transform: translateY(0);
+        transform: translateX(-50%) translateY(0);
         display: flex;
+    }
+
+    .mobile-cv {
+        display: block;
+        margin-top: 0.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border-color);
+        width: 100%;
+    }
+
+    .mobile-cv i {
+        width: 18px;
+        height: 18px;
     }
 
     .hamburger {
@@ -1111,8 +1143,8 @@ img {
     }
 
     .hero-image-placeholder {
-        width: 200px;
-        height: 200px;
+        width: min(200px, 80vw);
+        height: min(200px, 80vw);
         font-size: 4rem;
     }
 
@@ -1122,6 +1154,10 @@ img {
 }
 
 @media (max-width: 480px) {
+
+    .hero-name {
+        font-size: 2rem;
+    }
 
     .about-cards,
     .hobbies-grid {
@@ -1139,6 +1175,10 @@ img {
     .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .container {
+        padding: 0 1rem;
     }
 }
 
