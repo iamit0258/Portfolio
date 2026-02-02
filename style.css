@@ -149,16 +149,13 @@ img {
 /* ==================== NAVIGATION ==================== */
 .navbar {
     position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 1200px;
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
-    background: rgba(10, 10, 15, 0.85);
+    background: var(--bg-primary);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 100px;
+    border-bottom: 1px solid var(--border-color);
     padding: 0.75rem 0;
     transition: var(--transition);
 }
@@ -268,8 +265,10 @@ img {
     color: #fff;
 }
 
-.nav-link:hover::after {
-    width: 100%;
+@media (hover: hover) {
+    .nav-link:hover::after {
+        width: 100%;
+    }
 }
 
 .nav-actions {
@@ -356,7 +355,7 @@ img {
 }
 
 [data-theme="light"] .navbar {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--bg-primary);
 }
 
 /* ==================== HERO SECTION ==================== */
@@ -863,41 +862,91 @@ img {
 /* ==================== CERTIFICATIONS SECTION ==================== */
 .certifications {
     background: var(--bg-primary);
+    position: relative;
+    z-index: 1;
 }
 
 .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 .certification-card {
-    background: var(--bg-secondary);
-    padding: 1.5rem;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
-    text-align: center;
-    transition: var(--transition);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.certification-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .certification-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-8px);
     border-color: var(--accent-primary);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.certification-card:hover::before {
+    opacity: 1;
 }
 
 .certification-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.75rem;
+    width: 48px;
+    height: 48px;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-secondary);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
 .certification-card h3 {
-    font-size: 0.95rem;
-    margin-bottom: 0.4rem;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.4;
 }
 
 .certification-card p {
     color: var(--text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.certification-card p::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--accent-primary);
+    border-radius: 50%;
 }
 
 /* ==================== HOBBIES SECTION ==================== */
