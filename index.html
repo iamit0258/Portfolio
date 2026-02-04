@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Final-year B.Tech undergraduate in Electronics and Computer Engineering specializing in AI-driven and full-stack development. Explore my projects in GenAI, NLP, and IoT.">
-    <title>Amit Kumar Kuswaha | AI-Powered Full-Stack Developer</title>
+    <title>Amit Kumar Kuswaha | Portfolio</title>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -286,10 +286,13 @@
                             <img src="logos/projecta-logo.png" alt="Project A" class="project-img">
                         </div>
                         <div class="project-content">
-                            <h3>Project A - AI Chatbot</h3>
-                            <p>A high-performance AI conversational agent built with modern NLP and multimodal
-                                processing to support real-time voice and text interaction. Designed for low latency,
-                                contextual understanding, and seamless user experiences across web interfaces.</p>
+                            <h3>Project A — AI Chat & Voice Assistant</h3>
+                            <p>Created a chat- and voice-enabled AI assistant featuring real-time interactions,
+                                persistent conversational memory, and multilingual support.<span class="read-more-text">
+                                    Built on a secure web platform, the system delivers empathetic, context-aware
+                                    responses via seamless text and voice interfaces, providing a natural, engaging user
+                                    experience.</span></p>
+                            <button class="read-more-btn">Read More</button>
                             <div class="project-tech"><span>AI</span><span>Chatbot</span><span>HTML, CSS</span>
                                 <span>Vercel</span>
                             </div>
@@ -303,11 +306,15 @@
                         </div>
                         <div class="project-content">
                             <h3>GUDPALS - Senior Citizen Platform</h3>
-                            <p>GUDPALS is a senior-centric, voice-enabled digital platform designed to reduce loneliness
-                                and improve digital inclusion among elderly users. It provides a simple, bilingual
-                                (English & Hindi) interface for social connection, live sessions, wellness activities,
-                                astrology services, and a senior-friendly marketplace, making technology accessible,
-                                comfortable, and meaningful for seniors.</p>
+                            <p>GUDPALS is a senior-centric, AI-powered, voice-enabled digital platform designed to
+                                promote social connection, digital inclusion, and overall well-being among senior
+                                citizens.<span class="read-more-text"> The platform addresses the growing issue of
+                                    loneliness, social isolation, and technology anxiety faced by elderly users by
+                                    offering a simple, bilingual (English & Hindi), and accessibility-first digital
+                                    experience. Features such as voice-assisted navigation, large, readable interfaces,
+                                    real-time chat, and live video sessions ensure that seniors can use the platform
+                                    comfortably without feeling overwhelmed by technology.</span></p>
+                            <button class="read-more-btn">Read More</button>
                             <div class="project-tech"><span>WebApp</span><span>Python</span><span>React.js</span>
                                 <span>Node.js</span><span>PostgreSQL</span><span>Supabase</span><span>Clerk</span>
                                 <span>Vercel</span>
@@ -321,21 +328,22 @@
                             <img src="logos/ISA.png" alt="Instagram Sentiment Analysis" class="project-img">
                         </div>
                         <div class="project-content">
-                            <h3>Instagram Sentiment Analysis</h3>
-                            <p>NLP-based sentiment analysis pipeline using Python and ML libraries. Classifies
-                                comments
-                                into positive, negative, and neutral categories for brand insights.</p>
+                            <h3>Instagram Sentiment Analysis System</h3>
+                            <p>Designed and implemented an NLP-based sentiment analysis pipeline using Python and
+                                machine learning libraries to classify Instagram comments into positive, negative, and
+                                neutral categories.<span class="read-more-text"> Analyzed sentiment trends over time to
+                                    generate actionable insights into brand perception and customer feedback, helping
+                                    drive data-informed marketing strategies and engagement improvements.</span></p>
+                            <button class="read-more-btn">Read More</button>
                             <div class="project-tech"><span>Python</span><span>NLP</span><span>ML</span></div>
                         </div>
                     </article>
                     <article class="project-card reveal delay-100">
                         <div class="project-image">
-                            <div class="project-image-placeholder"><i data-lucide="home"
-                                    style="width: 48px; height: 48px;"></i></div>
-                            <div class="project-overlay"></div>
+                            <img src="logos/Home Automate.png" alt="Home Automation" class="project-img">
                         </div>
                         <div class="project-content">
-                            <h3>Home Automation System (IoT)</h3>
+                            <h3>Home Automation System using IoT</h3>
                             <p>IoT-enabled home automation using NodeMCU and Blynk for remote appliance control.
                                 Real-time monitoring via mobile app with user-friendly interaction.</p>
                             <div class="project-tech"><span>NodeMCU</span><span>Blynk</span><span>IoT</span></div>
@@ -343,12 +351,10 @@
                     </article>
                     <article class="project-card reveal delay-200">
                         <div class="project-image">
-                            <div class="project-image-placeholder"><i data-lucide="bot"
-                                    style="width: 48px; height: 48px;"></i></div>
-                            <div class="project-overlay"></div>
+                            <img src="logos/floorcleaningtoycar.jpeg" alt="Floor Cleaning Toy Car" class="project-img">
                         </div>
                         <div class="project-content">
-                            <h3>IoT Floor Cleaning Robot</h3>
+                            <h3>Floor Cleaning Toy Car</h3>
                             <p>Toy car-based floor cleaning prototype using Arduino and DC motors. Presented at
                                 college
                                 Hackfest Dron Pratibimb demonstrating robotics and automation skills.</p>
@@ -429,12 +435,12 @@
                         <h3>Intro to Cybersecurity</h3>
                         <p>Cisco Networking Academy • May 2025</p>
                     </article>
-                    <article class="certification-card reveal delay-100">
+                    <article class="certification-card reveal delay-500">
                         <div class="certification-icon"><i data-lucide="rocket"></i></div>
                         <h3>IDE Bootcamp 2025</h3>
                         <p>IIT Jammu (AICTE, MOE) • Feb 2025</p>
                     </article>
-                    <article class="certification-card reveal delay-200">
+                    <article class="certification-card reveal delay-600">
                         <div class="certification-icon"><i data-lucide="users"></i></div>
                         <h3>NSS Volunteer</h3>
                         <p>27th National Youth Festival, GoI • Jan 2024</p>
@@ -629,6 +635,18 @@
 
         document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .scale-up').forEach(el => {
             revealObserver.observe(el);
+        });
+
+        // Read More Toggle Logic
+        document.querySelectorAll('.read-more-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const projectContent = btn.closest('.project-content');
+                const text = projectContent.querySelector('.read-more-text');
+                if (text) {
+                    text.classList.toggle('active');
+                    btn.textContent = text.classList.contains('active') ? 'Read Less' : 'Read More';
+                }
+            });
         });
     </script>
 </body>

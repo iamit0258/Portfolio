@@ -669,6 +669,9 @@ img {
     overflow: hidden;
     border: 1px solid var(--border-color);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -679,7 +682,7 @@ img {
 
 .project-image {
     position: relative;
-    height: 160px;
+    height: 220px;
     background: var(--bg-primary);
 }
 
@@ -722,6 +725,9 @@ img {
 
 .project-content {
     padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-content h3 {
@@ -732,7 +738,7 @@ img {
 .project-content p {
     color: var(--text-secondary);
     font-size: 0.9rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     line-height: 1.5;
 }
 
@@ -741,13 +747,14 @@ img {
     flex-wrap: wrap;
     gap: 0.4rem;
     margin-bottom: 1rem;
+    margin-top: auto;
 }
 
 .project-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding: 1rem;
+    padding: 0.5rem;
     background: white;
 }
 
@@ -755,7 +762,7 @@ img {
     display: inline-flex;
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
-    margin-top: 0.5rem;
+    width: fit-content;
 }
 
 .project-tech span {
@@ -764,6 +771,35 @@ img {
     padding: 0.25rem 0.6rem;
     border-radius: 4px;
     font-size: 0.75rem;
+}
+
+/* Read More Styles */
+.read-more-text {
+    display: none;
+}
+
+.read-more-text.active {
+    display: inline;
+}
+
+.read-more-btn {
+    background: transparent;
+    border: none;
+    color: var(--accent-primary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0;
+    margin: 0 0 0.5rem 0;
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: var(--transition);
+}
+
+.read-more-btn:hover {
+    color: var(--accent-secondary);
 }
 
 /* ==================== TIMELINE (Education & Experience) ==================== */
@@ -1163,6 +1199,10 @@ img {
 
 .delay-500 {
     transition-delay: 500ms;
+}
+
+.delay-600 {
+    transition-delay: 600ms;
 }
 
 /* ==================== FOOTER ==================== */
