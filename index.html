@@ -5,8 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Final-year B.Tech undergraduate in Electronics and Computer Engineering with hands-on experience building AI-driven and full-stack applications.">
-    <title>Amit Kumar Kuswaha | Portfolio</title>
+        content="Final-year B.Tech undergraduate in Electronics and Computer Engineering specializing in AI-driven and full-stack development. Explore my projects in GenAI, NLP, and IoT.">
+    <title>Amit Kumar Kuswaha | AI-Powered Full-Stack Developer</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://amit-kuswaha.vercel.app/">
+    <meta property="og:title" content="Amit Kumar Kuswaha | AI Developer Portfolio">
+    <meta property="og:description"
+        content="Final-year B.Tech student building AI-driven and full-stack applications. View my work in GenAI, NLP, and robotics.">
+    <meta property="og:image" content="https://amit-kuswaha.vercel.app/photos/ak.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://amit-kuswaha.vercel.app/">
+    <meta property="twitter:title" content="Amit Kumar Kuswaha | AI Developer Portfolio">
+    <meta property="twitter:description"
+        content="Final-year B.Tech student building AI-driven and full-stack applications. View my work in GenAI, NLP, and robotics.">
+    <meta property="twitter:image" content="https://amit-kuswaha.vercel.app/photos/ak.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -67,7 +83,7 @@
     <!-- Hero Section -->
     <header id="home" class="hero">
         <div class="hero-container">
-            <div class="hero-content">
+            <div class="hero-content reveal-left">
                 <span class="hero-greeting">Hello, I'm</span>
                 <h1 class="hero-name">Amit Kumar Kuswaha</h1>
                 <h2 class="hero-role"><span class="role-highlight">AI-Powered Full-Stack Developer</span></h2>
@@ -104,7 +120,7 @@
             </div>
             <div class="hero-visual">
                 <div class="hero-image-wrapper">
-                    <div class="hero-image-placeholder">
+                    <div class="hero-image-placeholder reveal-right">
                         <img src="photos/ak.jpeg" alt="Amit Kumar Kuswaha" class="hero-img">
                     </div>
                     <div class="hero-decoration decoration-1"></div>
@@ -122,7 +138,7 @@
                     <h2 class="section-title">About Me</h2>
                 </div>
                 <div class="about-content">
-                    <div class="about-image">
+                    <div class="about-image reveal-left">
                         <div class="about-image-placeholder">
                             <model-viewer id="avatarModel" src="photos/avatar.glb" poster="photos/developer_avatar.png"
                                 alt="3D Avatar" loading="eager" auto-rotate camera-controls
@@ -132,7 +148,7 @@
                             </model-viewer>
                         </div>
                     </div>
-                    <div class="about-text">
+                    <div class="about-text reveal-right">
                         <div class="about-cards">
                             <article class="about-card"><span class="about-card-icon"><i
                                         data-lucide="user-round"></i></span>
@@ -171,7 +187,7 @@
                     <h2 class="section-title">Technical Skills</h2>
                 </div>
                 <div class="skills-grid">
-                    <div class="skill-category">
+                    <div class="skill-category reveal delay-100">
                         <h3 class="skill-category-title"><span class="category-icon"><i data-lucide="code-2"></i></span>
                             Programming Languages
                         </h3>
@@ -184,7 +200,7 @@
                             <span class="skill-tag">CSS</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category reveal delay-200">
                         <h3 class="skill-category-title"><span class="category-icon"><i data-lucide="bot"></i></span>
                             AI/ML
                         </h3>
@@ -195,7 +211,7 @@
                             <span class="skill-tag">Prompt Engineering</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category reveal delay-300">
                         <h3 class="skill-category-title"><span class="category-icon"><i data-lucide="server"></i></span>
                             Backend & Cloud
                         </h3>
@@ -205,7 +221,7 @@
                             <span class="skill-tag">Vercel</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category reveal delay-400">
                         <h3 class="skill-category-title"><span class="category-icon"><i data-lucide="wrench"></i></span>
                             Developer Tools
                         </h3>
@@ -217,7 +233,7 @@
                             <span class="skill-tag">Arduino IDE</span>
                         </div>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-category reveal delay-500">
                         <h3 class="skill-category-title"><span class="category-icon"><i data-lucide="brain"></i></span>
                             Core CS Concepts
                         </h3>
@@ -239,7 +255,7 @@
                     <h2 class="section-title">Work Experience</h2>
                 </div>
                 <div class="timeline">
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <span class="timeline-date">Jun 2025 - Aug 2025</span>
@@ -265,7 +281,7 @@
                     <h2 class="section-title">Projects</h2>
                 </div>
                 <div class="projects-grid">
-                    <article class="project-card">
+                    <article class="project-card reveal delay-100">
                         <div class="project-image">
                             <img src="logos/projecta-logo.png" alt="Project A" class="project-img">
                         </div>
@@ -281,7 +297,7 @@
                                 target="_blank">🌐 Visit Site</a>
                         </div>
                     </article>
-                    <article class="project-card">
+                    <article class="project-card reveal delay-200">
                         <div class="project-image">
                             <img src="logos/gudpals-logo.png" alt="GUDPALS" class="project-img">
                         </div>
@@ -300,11 +316,9 @@
                                 target="_blank">🌐 Visit Site</a>
                         </div>
                     </article>
-                    <article class="project-card">
+                    <article class="project-card reveal delay-300">
                         <div class="project-image">
-                            <div class="project-image-placeholder"><i data-lucide="bar-chart-3"
-                                    style="width: 48px; height: 48px;"></i></div>
-                            <div class="project-overlay"></div>
+                            <img src="logos/ISA.png" alt="Instagram Sentiment Analysis" class="project-img">
                         </div>
                         <div class="project-content">
                             <h3>Instagram Sentiment Analysis</h3>
@@ -314,7 +328,7 @@
                             <div class="project-tech"><span>Python</span><span>NLP</span><span>ML</span></div>
                         </div>
                     </article>
-                    <article class="project-card">
+                    <article class="project-card reveal delay-100">
                         <div class="project-image">
                             <div class="project-image-placeholder"><i data-lucide="home"
                                     style="width: 48px; height: 48px;"></i></div>
@@ -327,7 +341,7 @@
                             <div class="project-tech"><span>NodeMCU</span><span>Blynk</span><span>IoT</span></div>
                         </div>
                     </article>
-                    <article class="project-card">
+                    <article class="project-card reveal delay-200">
                         <div class="project-image">
                             <div class="project-image-placeholder"><i data-lucide="bot"
                                     style="width: 48px; height: 48px;"></i></div>
@@ -353,7 +367,7 @@
                     <h2 class="section-title">Education</h2>
                 </div>
                 <div class="timeline">
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <span class="timeline-date">2022 - Present</span>
@@ -363,7 +377,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <span class="timeline-date">2020 - 2022</span>
@@ -374,7 +388,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <span class="timeline-date">2020</span>
@@ -395,32 +409,32 @@
                     <h2 class="section-title">Certifications & Achievements</h2>
                 </div>
                 <div class="certifications-grid">
-                    <article class="certification-card">
+                    <article class="certification-card reveal delay-100">
                         <div class="certification-icon"><i data-lucide="bot"></i></div>
                         <h3>AI Fundamentals</h3>
                         <p>IBM SkillsBuild • Feb 2026</p>
                     </article>
-                    <article class="certification-card">
+                    <article class="certification-card reveal delay-200">
                         <div class="certification-icon"><i data-lucide="code-2"></i></div>
                         <h3>Python Essentials 1</h3>
                         <p>Cisco Networking Academy • Jan 2026</p>
                     </article>
-                    <article class="certification-card">
+                    <article class="certification-card reveal delay-300">
                         <div class="certification-icon"><i data-lucide="award"></i></div>
                         <h3>CCNA: Intro to Networks</h3>
                         <p>Cisco Networking Academy • Oct 2025</p>
                     </article>
-                    <article class="certification-card">
+                    <article class="certification-card reveal delay-400">
                         <div class="certification-icon"><i data-lucide="shield-check"></i></div>
                         <h3>Intro to Cybersecurity</h3>
                         <p>Cisco Networking Academy • May 2025</p>
                     </article>
-                    <article class="certification-card">
+                    <article class="certification-card reveal delay-100">
                         <div class="certification-icon"><i data-lucide="rocket"></i></div>
                         <h3>IDE Bootcamp 2025</h3>
                         <p>IIT Jammu (AICTE, MOE) • Feb 2025</p>
                     </article>
-                    <article class="certification-card">
+                    <article class="certification-card reveal delay-200">
                         <div class="certification-icon"><i data-lucide="users"></i></div>
                         <h3>NSS Volunteer</h3>
                         <p>27th National Youth Festival, GoI • Jan 2024</p>
@@ -436,7 +450,7 @@
                     <h2 class="section-title">Hobbies & Interests</h2>
                 </div>
                 <div class="hobbies-grid">
-                    <article class="hobby-card">
+                    <article class="hobby-card reveal delay-100">
                         <div class="hobby-icon"><i data-lucide="camera"></i></div>
                         <h3>Mobile photography</h3>
                         <p>Capturing moments and exploring visual storytelling through the lens.<span
@@ -444,13 +458,13 @@
                         <a href="photography.html" class="btn btn-primary btn-sm" style="margin-top: 1rem;">View
                             Gallery</a>
                     </article>
-                    <article class="hobby-card">
+                    <article class="hobby-card reveal delay-200">
                         <div class="hobby-icon"><i data-lucide="pen-tool"></i></div>
                         <h3>Writing</h3>
                         <p>Expressing ideas through words, from technical blogs to creative pieces.<span
                                 class="hobby-skill">Communication • Expression</span></p>
                     </article>
-                    <article class="hobby-card">
+                    <article class="hobby-card reveal delay-300">
                         <div class="hobby-icon"><i data-lucide="palette"></i></div>
                         <h3>Sketching</h3>
                         <p>Creating art through pencil sketches and digital illustrations.<span
@@ -469,7 +483,7 @@
                     <h2 class="section-title">Contact Me</h2>
                 </div>
                 <div class="contact-content">
-                    <div class="contact-info">
+                    <div class="contact-info reveal-left">
                         <p class="contact-intro">I'm looking for new opportunities! Whether you have a question or just
                             want to say hi, feel free to reach out.</p>
                         <div class="contact-cards">
@@ -514,7 +528,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="contact-message">
+                    <div class="contact-message reveal-right">
                         <div class="message-box">
                             <h3>Let's Work Together!</h3>
                             <p>Interested in new projects and opportunities. Don't hesitate to reach out!</p>
@@ -596,6 +610,26 @@
 
         // Initialize Lucide Icons
         lucide.createIcons();
+
+        // Scroll Reveal Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once animated, we can stop observing it
+                    // revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .scale-up').forEach(el => {
+            revealObserver.observe(el);
+        });
     </script>
 </body>
 
