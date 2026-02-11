@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.amitkk.in/">
+    <meta name="google-site-verification" content="gdvLZeo7UvXTIZTP40YXUggchUFi0RsJjz7NucVaXLI" />
+    <meta name="description"
+        content="Final-year B.Tech undergraduate in Electronics and Computer Engineering specializing in AI-driven and full-stack development. Explore my projects in GenAI, NLP, and IoT.">
+    <title>Amit Kumar Kuswaha | AI-Powered Full-Stack Developer</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.amitkk.in/">
+    <meta property="og:title" content="Amit Kumar Kuswaha | AI-Powered Full-Stack Developer Portfolio">
+    <meta property="og:description"
+        content="Final-year B.Tech student building AI-driven and full-stack applications. View my work in GenAI, NLP, and robotics.">
+    <meta property="og:image" content="https://www.amitkk.in/photos/ak.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.amitkk.in/">
+    <meta property="twitter:title" content="Amit Kumar Kuswaha | AI-Powered Full-Stack Developer Portfolio">
+    <meta property="twitter:description"
+        content="Final-year B.Tech student building AI-driven and full-stack applications. View my work in GenAI, NLP, and robotics.">
+    <meta property="twitter:image" content="https://www.amitkk.in/photos/ak.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600;700;800&family=Inconsolata:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <meta name="keywords"
+        content="Amit Kumar Kuswaha, AI Developer, Full-Stack Developer, GUDPALS, Project A, AI Assistant, Senior Citizen Platform, GenAI, NLP">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Amit Kumar Kuswaha",
+      "url": "https://www.amitkk.in/",
+      "image": "https://www.amitkk.in/photos/ak.jpeg",
+      "jobTitle": "AI-Powered Full-Stack Developer",
+      "knowsAbout": ["Artificial Intelligence", "Full-Stack Web Development", "Natural Language Processing", "GenAI"],
+      "hasPart": [
+        {
+          "@type": "CreativeWork",
+          "name": "GUDPALS",
+          "description": "AI-powered, voice-enabled digital platform for senior citizens.",
+          "url": "https://gudpalscare.vercel.app"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Project A",
+          "description": "AI Chat & Voice Assistant featuring real-time interactions.",
+          "url": "https://projectachatbot.vercel.app"
+        }
+      ]
+    }
+    </script>
+    <link rel="icon" type="image/x-icon" href="../thumbnails/akk.ico?v=2">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="../photos/ak.jpeg" alt="AK Logo" class="logo-img">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">HOME</a></li>
+                <li><a href="#about" class="nav-link">ABOUT</a></li>
+                <li><a href="#skills" class="nav-link">SKILLS</a></li>
+                <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
+                <li><a href="#projects" class="nav-link">PROJECT</a></li>
+                <li><a href="#education" class="nav-link">EDUCATION</a></li>
+                <li><a href="#certifications" class="nav-link">CERTIFICATIONS</a></li>
+                <li><a href="#hobbies" class="nav-link">HOBBIES</a></li>
+                <li><a href="#contact" class="nav-link">CONTACT</a></li>
+                <li class="mobile-cv"><a href="../resume.pdf?v=2" class="nav-link" target="_blank"><i
+                            data-lucide="file-text"></i>
+                        RESUME</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="../resume.pdf?v=2" class="btn btn-primary btn-sm" target="_blank"><i
+                        data-lucide="file-text"></i>
+                    Resume</a>
+                <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5" />
+                        <path
+                            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="scrollProgress"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <canvas id="dotCanvas"></canvas>
+        <div class="hero-container">
+            <div class="hero-content reveal-left">
+                <span class="hero-greeting">Hello, I'm</span>
+                <h1 class="hero-name">Amit Kumar Kuswaha</h1>
+                <h2 class="hero-role"><span class="role-highlight">AI-Powered Full-Stack Developer</span></h2>
+                <p class="hero-tagline">Final-year B.Tech undergraduate in Electronics and Computer Engineering with
+                    hands-on
+                    experience building AI-driven and full-stack applications.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+                <div class="hero-social">
+                    <a href="mailto:iamitk487@gmail.com" class="social-link" title="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/iamit105" class="social-link" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/iamit0258" class="social-link" title="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-placeholder reveal-right">
+                        <img src="../photos/ak.jpeg" alt="Amit Kumar Kuswaha" class="hero-img">
+                    </div>
+                    <div class="hero-decoration decoration-1"></div>
+                    <div class="hero-decoration decoration-2"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="section about reveal">
+            <div class="stars-layer-1"></div>
+            <div class="stars-layer-2"></div>
+            <div class="stars-layer-3"></div>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-image reveal-left">
+                        <div class="about-image-placeholder">
+                            <model-viewer id="avatarModel" src="../photos/avatar.glb"
+                                poster="../photos/developer_avatar.png" alt="3D Avatar" loading="eager" auto-rotate
+                                camera-controls camera-orbit="0deg 75deg 105%" shadow-intensity="1" shadow-softness="1"
+                                environment-image="neutral" exposure="1.5"
+                                style="width: 100%; height: 100%; background: transparent;">
+                            </model-viewer>
+                        </div>
+                    </div>
+                    <div class="about-text reveal-right">
+                        <div class="about-cards">
+                            <article class="about-card"><span class="about-card-icon"><i
+                                        data-lucide="user-round"></i></span>
+                                <h3>Experience</h3>
+                                <p>GenAI Intern</p>
+                            </article>
+                            <article class="about-card"><span class="about-card-icon"><i
+                                        data-lucide="book-open"></i></span>
+                                <h3>Education</h3>
+                                <p>B.Tech Electronics and Computer Engineering</p>
+                            </article>
+                            <article class="about-card"><span class="about-card-icon"><i
+                                        data-lucide="rocket"></i></span>
+                                <h3>Projects</h3>
+                                <p>4+ Completed</p>
+                            </article>
+                        </div>
+                        <p class="about-description">Final-year B.Tech undergraduate in Electronics and Computer
+                            Engineering with
+                            hands-on experience building AI-driven and full-stack applications. Developed a multimodal
+                            AI voice assistant using LLMs and real-time speech processing and a cloud-deployed web
+                            platform for senior citizens.</p>
+                        <p class="about-description">Strong foundation in data structures, algorithms, OOP, and computer
+                            networks, with practical exposure to GenAI, NLP, and IoT systems. Currently pursuing B.Tech
+                            at Dronacharya Group of Institutions, Greater Noida.</p>
+                        <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills">
+            <svg class="wave-container"></svg>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Technical Skills</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category reveal delay-100">
+                        <h3 class="skill-category-title"><span class="category-icon"><i data-lucide="code-2"></i></span>
+                            Programming Languages
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal delay-200">
+                        <h3 class="skill-category-title"><span class="category-icon"><i data-lucide="bot"></i></span>
+                            AI/ML
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">LLMs</span>
+                            <span class="skill-tag">Prompt Engineering</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal delay-300">
+                        <h3 class="skill-category-title"><span class="category-icon"><i data-lucide="server"></i></span>
+                            Backend & Cloud
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Supabase</span>
+                            <span class="skill-tag">Clerk</span>
+                            <span class="skill-tag">Vercel</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal delay-400">
+                        <h3 class="skill-category-title"><span class="category-icon"><i data-lucide="wrench"></i></span>
+                            Developer Tools
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Google Colab</span>
+                            <span class="skill-tag">MATLAB</span>
+                            <span class="skill-tag">Arduino IDE</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal delay-500">
+                        <h3 class="skill-category-title"><span class="category-icon"><i data-lucide="brain"></i></span>
+                            Core CS Concepts
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Data Structures & Algorithms</span>
+                            <span class="skill-tag">Operating Systems</span>
+                            <span class="skill-tag">Computer Networks</span>
+                            <span class="skill-tag">OOP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section experience">
+            <div class="stars-layer-1"></div>
+            <div class="stars-layer-2"></div>
+            <div class="stars-layer-3"></div>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Work Experience</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Jun 2025 - Aug 2025</span>
+                            <h3>GenAI Intern</h3>
+                            <h4>AgriDoot (NovosEdge Pvt. Ltd.)</h4>
+                            <p>Working on Gyan LLM development and web scraping modules for large-scale datasets.</p>
+                            <ul>
+                                <li>Assisted in developing Gyan LLM, a domain-specific large language model</li>
+                                <li>Contributed to Gyan Fatafat web scraping module for data collection</li>
+                                <li>Supported prompt design, data preprocessing, and validation workflows</li>
+                                <li>Integrated AI components into production pipelines</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects">
+            <svg class="wave-container"></svg>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Projects</h2>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card reveal delay-100">
+                        <div class="project-image">
+                            <img src="../thumbnails/projecta-logo.png" alt="Project A" class="project-img">
+                        </div>
+                        <div class="project-content">
+                            <h3>Project A — AI Chat & Voice Assistant</h3>
+                            <p>Created a chat- and voice-enabled AI assistant featuring real-time interactions,
+                                persistent conversational memory, and multilingual support.<span class="read-more-text">
+                                    Built on a secure web platform, the system delivers empathetic, context-aware
+                                    responses via seamless text and voice interfaces, providing a natural, engaging user
+                                    experience.</span></p>
+                            <button class="read-more-btn">Read More</button>
+                            <div class="project-tech"><span>AI</span><span>Chatbot</span><span>HTML, CSS</span>
+                                <span>Vercel</span>
+                            </div>
+                            <a href="https://projectachatbot.vercel.app" class="btn btn-primary project-btn"
+                                target="_blank">🌐 Visit Site</a>
+                        </div>
+                    </article>
+                    <article class="project-card reveal delay-200">
+                        <div class="project-image">
+                            <img src="../thumbnails/gudpals-logo.png" alt="GUDPALS" class="project-img">
+                        </div>
+                        <div class="project-content">
+                            <h3>GUDPALS - Senior Citizen Platform</h3>
+                            <p>GUDPALS is a senior-centric, AI-powered, voice-enabled digital platform designed to
+                                promote social connection, digital inclusion, and overall well-being among senior
+                                citizens.<span class="read-more-text"> The platform addresses the growing issue of
+                                    loneliness, social isolation, and technology anxiety faced by elderly users by
+                                    offering a simple, bilingual (English & Hindi), and accessibility-first digital
+                                    experience. Features such as voice-assisted navigation, large, readable interfaces,
+                                    real-time chat, and live video sessions ensure that seniors can use the platform
+                                    comfortably without feeling overwhelmed by technology.</span></p>
+                            <button class="read-more-btn">Read More</button>
+                            <div class="project-tech"><span>WebApp</span><span>Python</span><span>React.js</span>
+                                <span>Node.js</span><span>PostgreSQL</span><span>Supabase</span><span>Clerk</span>
+                                <span>Vercel</span>
+                            </div>
+                            <a href="https://gudpalscare.vercel.app" class="btn btn-primary project-btn"
+                                target="_blank">🌐 Visit Site</a>
+                        </div>
+                    </article>
+                    <article class="project-card reveal delay-300">
+                        <div class="project-image">
+                            <img src="../thumbnails/ISA.png" alt="Instagram Sentiment Analysis" class="project-img">
+                        </div>
+                        <div class="project-content">
+                            <h3>Instagram Sentiment Analysis System</h3>
+                            <p>Designed and implemented an NLP-based sentiment analysis pipeline using Python and
+                                machine learning libraries to classify Instagram comments into positive, negative, and
+                                neutral categories.<span class="read-more-text"> Analyzed sentiment trends over time to
+                                    generate actionable insights into brand perception and customer feedback, helping
+                                    drive data-informed marketing strategies and engagement improvements.</span></p>
+                            <button class="read-more-btn">Read More</button>
+                            <div class="project-tech"><span>Python</span><span>NLP</span><span>ML</span></div>
+                        </div>
+                    </article>
+                    <article class="project-card reveal delay-100">
+                        <div class="project-image">
+                            <img src="../thumbnails/Home Automate.png" alt="Home Automation" class="project-img">
+                        </div>
+                        <div class="project-content">
+                            <h3>Home Automation System using IoT</h3>
+                            <p>IoT-enabled home automation using NodeMCU and Blynk for remote appliance control.
+                                Real-time monitoring via mobile app with user-friendly interaction.</p>
+                            <div class="project-tech"><span>NodeMCU</span><span>Blynk</span><span>IoT</span></div>
+                        </div>
+                    </article>
+                    <article class="project-card reveal delay-200">
+                        <div class="project-image">
+                            <img src="../thumbnails/floorcleaningtoycar.jpeg" alt="Floor Cleaning Toy Car"
+                                class="project-img">
+                        </div>
+                        <div class="project-content">
+                            <h3>Floor Cleaning Toy Car</h3>
+                            <p>Toy car-based floor cleaning prototype using Arduino and DC motors. Presented at
+                                college
+                                Hackfest Dron Pratibimb demonstrating robotics and automation skills.</p>
+                            <div class="project-tech"><span>Arduino</span><span>C</span><span>DC Motors</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section education">
+            <div class="stars-layer-1"></div>
+            <div class="stars-layer-2"></div>
+            <div class="stars-layer-3"></div>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Education</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2022 - Present</span>
+                            <h3>B.Tech in Electronics & Computer Engineering</h3>
+                            <h4>Dronacharya Group of Institutions, Greater Noida</h4>
+                            <div class="timeline-highlights"><span>ECZ</span><span>7.38 CGPA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2020 - 2022</span>
+                            <h3>Senior Secondary (Class XII) - AHSEC</h3>
+                            <h4>B. Borooah College, Guwahati</h4>
+                            <p>Science stream under Assam Higher Secondary Education Board.</p>
+                            <div class="timeline-highlights"><span>Science</span><span>73.2%</span><span>AHSEC</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2020</span>
+                            <h3>High School (Class X) - SEBA</h3>
+                            <h4>Aryan Academy English Medium High School, Guwahati</h4>
+                            <p>Completed under Assam Board of Secondary Education.</p>
+                            <div class="timeline-highlights"><span>SEBA</span><span>79.67%</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section certifications">
+            <svg class="wave-container"></svg>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Certifications & Achievements</h2>
+                </div>
+                <div class="certifications-grid">
+                    <article class="certification-card reveal delay-100">
+                        <div class="certification-icon"><i data-lucide="bot"></i></div>
+                        <h3>AI Fundamentals</h3>
+                        <p>IBM SkillsBuild • Feb 2026</p>
+                    </article>
+                    <article class="certification-card reveal delay-200">
+                        <div class="certification-icon"><i data-lucide="code-2"></i></div>
+                        <h3>Python Essentials 1</h3>
+                        <p>Cisco Networking Academy • Jan 2026</p>
+                    </article>
+                    <article class="certification-card reveal delay-300">
+                        <div class="certification-icon"><i data-lucide="award"></i></div>
+                        <h3>CCNA: Intro to Networks</h3>
+                        <p>Cisco Networking Academy • Oct 2025</p>
+                    </article>
+                    <article class="certification-card reveal delay-400">
+                        <div class="certification-icon"><i data-lucide="shield-check"></i></div>
+                        <h3>Intro to Cybersecurity</h3>
+                        <p>Cisco Networking Academy • May 2025</p>
+                    </article>
+                    <article class="certification-card reveal delay-500">
+                        <div class="certification-icon"><i data-lucide="rocket"></i></div>
+                        <h3>IDE Bootcamp 2025</h3>
+                        <p>IIT Jammu (AICTE, MOE) • Feb 2025</p>
+                    </article>
+                    <article class="certification-card reveal delay-600">
+                        <div class="certification-icon"><i data-lucide="users"></i></div>
+                        <h3>NSS Volunteer</h3>
+                        <p>27th National Youth Festival, GoI • Jan 2024</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="section hobbies">
+            <div class="stars-layer-1"></div>
+            <div class="stars-layer-2"></div>
+            <div class="stars-layer-3"></div>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Hobbies & Interests</h2>
+                </div>
+                <div class="hobbies-grid">
+                    <article class="hobby-card reveal delay-100">
+                        <div class="hobby-icon"><i data-lucide="camera"></i></div>
+                        <h3>Mobile photography</h3>
+                        <p>Capturing moments and exploring visual storytelling through the lens.<span
+                                class="hobby-skill">Creativity • Observation</span></p>
+                        <a href="photography.html" class="btn btn-primary btn-sm" style="margin-top: 1rem;">View
+                            Gallery</a>
+                    </article>
+                    <article class="hobby-card reveal delay-200">
+                        <div class="hobby-icon"><i data-lucide="pen-tool"></i></div>
+                        <h3>Writing</h3>
+                        <p>Expressing ideas through words, from technical blogs to creative pieces.<span
+                                class="hobby-skill">Communication • Expression</span></p>
+                    </article>
+                    <article class="hobby-card reveal delay-300">
+                        <div class="hobby-icon"><i data-lucide="palette"></i></div>
+                        <h3>Sketching</h3>
+                        <p>Creating art through pencil sketches and digital illustrations.<span
+                                class="hobby-skill">Creativity • Patience</span></p>
+                        <a href="sketching.html" class="btn btn-primary btn-sm" style="margin-top: 1rem;">View
+                            Gallery</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <svg class="wave-container"></svg>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Contact Me</h2>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info reveal-left">
+                        <p class="contact-intro">I'm looking for new opportunities! Whether you have a question or just
+                            want to say hi, feel free to reach out.</p>
+                        <div class="contact-cards">
+                            <a href="mailto:iamitk487@gmail.com" class="contact-card">
+                                <span class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h3>Email</h3>
+                                    <p>iamitk487@gmail.com</p>
+                                </div>
+                            </a>
+                            <a href="https://linkedin.com/in/iamit105" class="contact-card" target="_blank">
+                                <span class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h3>LinkedIn</h3>
+                                    <p>/in/iamit105</p>
+                                </div>
+                            </a>
+                            <a href="https://github.com/iamit0258" class="contact-card" target="_blank">
+                                <span class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
+                                </span>
+                                <div>
+                                    <h3>GitHub</h3>
+                                    <p>/iamit0258</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-message reveal-right">
+                        <div class="message-box">
+                            <h3>Let's Work Together!</h3>
+                            <p>Interested in new projects and opportunities. Don't hesitate to reach out!</p>
+                            <a href="mailto:iamitk487@gmail.com" class="btn btn-primary btn-large">Say Hello :)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Amit Kumar Kuswaha. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Ensure page starts at top on reload ONLY if no hash is present
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        if (!window.location.hash) {
+            window.scrollTo(0, 0);
+            window.addEventListener('load', () => window.scrollTo(0, 0));
+        }
+
+        // Scroll Progress Bar Logic
+        const scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const windowScroll = window.scrollY;
+            const height = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (windowScroll / height) * 100;
+            scrollProgress.style.width = scrolled + '%';
+        });
+
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // 3D Model Scroll Rotation
+        const modelViewer = document.querySelector('#avatarModel');
+        if (modelViewer) {
+            modelViewer.addEventListener('load', () => {
+                window.addEventListener('scroll', () => {
+                    const rotation = window.scrollY * 0.15; // Sensitivity
+                    // Using camera-orbit to spin around the center
+                    modelViewer.cameraOrbit = `${rotation}deg 75deg 105%`;
+                });
+            });
+        }
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Scroll Reveal Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once animated, we can stop observing it
+                    // revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .scale-up').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Hero Scroll Parallax
+        const heroContent = document.querySelector('.hero-main-content');
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            if (heroContent && scroll < window.innerHeight) {
+                const opacity = 1 - (scroll / (window.innerHeight * 0.8));
+                const scale = 1 - (scroll / (window.innerHeight * 5));
+                const translateY = scroll * 0.3;
+
+                heroContent.style.opacity = Math.max(0, opacity);
+                heroContent.style.transform = `scale(${Math.max(0.9, scale)}) translateY(${translateY}px)`;
+            }
+        });
+
+        // Read More Toggle Logic
+        document.querySelectorAll('.read-more-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const projectContent = btn.closest('.project-content');
+                const text = projectContent.querySelector('.read-more-text');
+                if (text) {
+                    text.classList.toggle('active');
+                    btn.textContent = text.classList.contains('active') ? 'Read Less' : 'Read More';
+                }
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
+    <script src="../js/star_generator.js"></script>
+    <script src="../js/particles.js"></script>
+    <script src="../js/waves.js"></script>
+</body>
+
+
+</html>
