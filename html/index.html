@@ -62,6 +62,10 @@
     <link rel="icon" type="image/x-icon" href="../thumbnails/akk.ico?v=2">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- GSAP for Smooth Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
 </head>
 
 <body>
@@ -77,7 +81,6 @@
                 <li><a href="#skills" class="nav-link">SKILLS</a></li>
                 <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
                 <li><a href="#projects" class="nav-link">PROJECT</a></li>
-                <li><a href="#education" class="nav-link">EDUCATION</a></li>
                 <li><a href="#certifications" class="nav-link">CERTIFICATIONS</a></li>
                 <li><a href="#hobbies" class="nav-link">HOBBIES</a></li>
                 <li><a href="#contact" class="nav-link">CONTACT</a></li>
@@ -286,29 +289,74 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section experience">
+        <!-- Resume Section (Experience & Education) -->
+        <section id="experience" class="section resume-section experience">
             <div class="stars-layer-1"></div>
             <div class="stars-layer-2"></div>
             <div class="stars-layer-3"></div>
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Work Experience</h2>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item reveal">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">Jun 2025 - Aug 2025</span>
-                            <h3>GenAI Intern</h3>
-                            <h4>AgriDoot (NovosEdge Pvt. Ltd.)</h4>
-                            <p>Working on Gyan LLM development and web scraping modules for large-scale datasets.</p>
-                            <ul>
-                                <li>Assisted in developing Gyan LLM, a domain-specific large language model</li>
-                                <li>Contributed to Gyan Fatafat web scraping module for data collection</li>
-                                <li>Supported prompt design, data preprocessing, and validation workflows</li>
-                                <li>Integrated AI components into production pipelines</li>
-                            </ul>
+                <div class="resume-grid">
+                    <!-- Work Experience Column -->
+                    <div class="resume-col work-experience">
+                        <div class="section-header">
+                            <h2 class="section-title">Work Experience</h2>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-item reveal">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Jun 2025 - Aug 2025</span>
+                                    <h3>GenAI Intern</h3>
+                                    <h4>AgriDoot (NovosEdge Pvt. Ltd.)</h4>
+                                    <p>Working on Gyan LLM development and web scraping modules for large-scale
+                                        datasets.</p>
+                                    <ul>
+                                        <li>Assisted in developing Gyan LLM, a domain-specific large language model</li>
+                                        <li>Contributed to Gyan Fatafat web scraping module for data collection</li>
+                                        <li>Supported prompt design, data preprocessing, and validation workflows</li>
+                                        <li>Integrated AI components into production pipelines</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Column -->
+                    <div id="education" class="resume-col education">
+                        <div class="section-header">
+                            <h2 class="section-title">Education</h2>
+                        </div>
+                        <div class="timeline">
+                            <div class="timeline-item reveal">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2022 - Present</span>
+                                    <h3>B.Tech in Electronics & Computer Engineering</h3>
+                                    <h4>Dronacharya Group of Institutions, Greater Noida</h4>
+                                    <div class="timeline-highlights"><span>ECZ</span><span>74.83%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item reveal">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2020 - 2022</span>
+                                    <h3>Senior Secondary (Class XII) - AHSEC</h3>
+                                    <h4>B. Borooah College, Guwahati</h4>
+                                    <div class="timeline-highlights">
+                                        <span>Science</span><span>73.2%</span><span>AHSEC</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item reveal">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">2020</span>
+                                    <h3>High School (Class X) - SEBA</h3>
+                                    <h4>Aryan Academy English Medium High School, Guwahati</h4>
+                                    <div class="timeline-highlights"><span>SEBA</span><span>79.67%</span></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -322,8 +370,11 @@
                 <div class="section-header">
                     <h2 class="section-title">Projects</h2>
                 </div>
-                <div class="projects-grid">
-                    <article class="project-card reveal delay-100">
+            </div>
+            <div class="projects-marquee">
+                <div class="projects-track">
+                    <!-- First Set -->
+                    <article class="project-card">
                         <div class="project-image">
                             <img src="../thumbnails/projecta-logo.png" alt="Project A" class="project-img">
                         </div>
@@ -332,7 +383,8 @@
                             <p>Created a chat- and voice-enabled AI assistant featuring real-time interactions,
                                 persistent conversational memory, and multilingual support.<span class="read-more-text">
                                     Built on a secure web platform, the system delivers empathetic, context-aware
-                                    responses via seamless text and voice interfaces, providing a natural, engaging user
+                                    responses via seamless text and voice interfaces, providing a natural, engaging
+                                    user
                                     experience.</span></p>
                             <button class="read-more-btn">Read More</button>
                             <div class="project-tech"><span>AI</span><span>Chatbot</span><span>HTML, CSS</span>
@@ -342,7 +394,7 @@
                                 target="_blank">🌐 Visit Site</a>
                         </div>
                     </article>
-                    <article class="project-card reveal delay-200">
+                    <article class="project-card">
                         <div class="project-image">
                             <img src="../thumbnails/gudpals-logo.png" alt="GUDPALS" class="project-img">
                         </div>
@@ -353,7 +405,8 @@
                                 citizens.<span class="read-more-text"> The platform addresses the growing issue of
                                     loneliness, social isolation, and technology anxiety faced by elderly users by
                                     offering a simple, bilingual (English & Hindi), and accessibility-first digital
-                                    experience. Features such as voice-assisted navigation, large, readable interfaces,
+                                    experience. Features such as voice-assisted navigation, large, readable
+                                    interfaces,
                                     real-time chat, and live video sessions ensure that seniors can use the platform
                                     comfortably without feeling overwhelmed by technology.</span></p>
                             <button class="read-more-btn">Read More</button>
@@ -365,22 +418,40 @@
                                 target="_blank">🌐 Visit Site</a>
                         </div>
                     </article>
-                    <article class="project-card reveal delay-300">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="../thumbnails/gn.png" alt="Grey Note" class="project-img">
+                        </div>
+                        <div class="project-content">
+                            <h3>Grey Note — Anonymous Messaging</h3>
+                            <p>Privacy-first anonymous messaging platform designed with a clean, text-heavy aesthetic.
+                                Allows users to share a personal link and receive messages without the sender needing
+                                to log in.</p>
+                            <div class="project-tech"><span>Privacy</span><span>Messaging</span><span>CleanUI</span>
+                            </div>
+                            <a href="https://greynote.vercel.app" class="btn btn-primary project-btn" target="_blank">🌐
+                                Visit Site</a>
+                        </div>
+                    </article>
+                    <article class="project-card">
                         <div class="project-image">
                             <img src="../thumbnails/ISA.png" alt="Instagram Sentiment Analysis" class="project-img">
                         </div>
                         <div class="project-content">
                             <h3>Instagram Sentiment Analysis System</h3>
                             <p>Designed and implemented an NLP-based sentiment analysis pipeline using Python and
-                                machine learning libraries to classify Instagram comments into positive, negative, and
-                                neutral categories.<span class="read-more-text"> Analyzed sentiment trends over time to
-                                    generate actionable insights into brand perception and customer feedback, helping
+                                machine learning libraries to classify Instagram comments into positive, negative,
+                                and
+                                neutral categories.<span class="read-more-text"> Analyzed sentiment trends over time
+                                    to
+                                    generate actionable insights into brand perception and customer feedback,
+                                    helping
                                     drive data-informed marketing strategies and engagement improvements.</span></p>
                             <button class="read-more-btn">Read More</button>
                             <div class="project-tech"><span>Python</span><span>NLP</span><span>ML</span></div>
                         </div>
                     </article>
-                    <article class="project-card reveal delay-100">
+                    <article class="project-card">
                         <div class="project-image">
                             <img src="../thumbnails/Home Automate.png" alt="Home Automation" class="project-img">
                         </div>
@@ -391,7 +462,7 @@
                             <div class="project-tech"><span>NodeMCU</span><span>Blynk</span><span>IoT</span></div>
                         </div>
                     </article>
-                    <article class="project-card reveal delay-200">
+                    <article class="project-card">
                         <div class="project-image">
                             <img src="../thumbnails/floorcleaningtoycar.jpeg" alt="Floor Cleaning Toy Car"
                                 class="project-img">
@@ -409,128 +480,90 @@
             </div>
         </section>
 
-        <!-- Education Section -->
-        <section id="education" class="section education">
-            <div class="stars-layer-1"></div>
-            <div class="stars-layer-2"></div>
-            <div class="stars-layer-3"></div>
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Education</h2>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item reveal">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">2022 - Present</span>
-                            <h3>B.Tech in Electronics & Computer Engineering</h3>
-                            <h4>Dronacharya Group of Institutions, Greater Noida</h4>
-                            <div class="timeline-highlights"><span>ECZ</span><span>7.38 CGPA</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">2020 - 2022</span>
-                            <h3>Senior Secondary (Class XII) - AHSEC</h3>
-                            <h4>B. Borooah College, Guwahati</h4>
-                            <p>Science stream under Assam Higher Secondary Education Board.</p>
-                            <div class="timeline-highlights"><span>Science</span><span>73.2%</span><span>AHSEC</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">2020</span>
-                            <h3>High School (Class X) - SEBA</h3>
-                            <h4>Aryan Academy English Medium High School, Guwahati</h4>
-                            <p>Completed under Assam Board of Secondary Education.</p>
-                            <div class="timeline-highlights"><span>SEBA</span><span>79.67%</span></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Certifications Section -->
-        <section id="certifications" class="section certifications">
-            <svg class="wave-container"></svg>
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Certifications & Achievements</h2>
-                </div>
-                <div class="certifications-grid">
-                    <article class="certification-card reveal delay-100">
-                        <div class="certification-icon"><i data-lucide="bot"></i></div>
-                        <h3>AI Fundamentals</h3>
-                        <p>IBM SkillsBuild • Feb 2026</p>
-                    </article>
-                    <article class="certification-card reveal delay-200">
-                        <div class="certification-icon"><i data-lucide="code-2"></i></div>
-                        <h3>Python Essentials 1</h3>
-                        <p>Cisco Networking Academy • Jan 2026</p>
-                    </article>
-                    <article class="certification-card reveal delay-300">
-                        <div class="certification-icon"><i data-lucide="award"></i></div>
-                        <h3>CCNA: Intro to Networks</h3>
-                        <p>Cisco Networking Academy • Oct 2025</p>
-                    </article>
-                    <article class="certification-card reveal delay-400">
-                        <div class="certification-icon"><i data-lucide="shield-check"></i></div>
-                        <h3>Intro to Cybersecurity</h3>
-                        <p>Cisco Networking Academy • May 2025</p>
-                    </article>
-                    <article class="certification-card reveal delay-500">
-                        <div class="certification-icon"><i data-lucide="rocket"></i></div>
-                        <h3>IDE Bootcamp 2025</h3>
-                        <p>IIT Jammu (AICTE, MOE) • Feb 2025</p>
-                    </article>
-                    <article class="certification-card reveal delay-600">
-                        <div class="certification-icon"><i data-lucide="users"></i></div>
-                        <h3>NSS Volunteer</h3>
-                        <p>27th National Youth Festival, GoI • Jan 2024</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+        <div class="certs-hobbies-wrapper">
+            <div class="certs-hobbies-track">
+                <!-- Certifications Section -->
+                <section id="certifications" class="section certifications">
+                    <div class="stars-layer-1"></div>
+                    <div class="stars-layer-2"></div>
+                    <div class="stars-layer-3"></div>
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">Certifications & Achievements</h2>
+                        </div>
+                        <div class="certifications-grid">
+                            <article class="certification-card reveal delay-100">
+                                <div class="certification-icon"><i data-lucide="bot"></i></div>
+                                <h3>AI Fundamentals</h3>
+                                <p>IBM SkillsBuild • Feb 2026</p>
+                            </article>
+                            <article class="certification-card reveal delay-200">
+                                <div class="certification-icon"><i data-lucide="code-2"></i></div>
+                                <h3>Python Essentials 1</h3>
+                                <p>Cisco Networking Academy • Jan 2026</p>
+                            </article>
+                            <article class="certification-card reveal delay-300">
+                                <div class="certification-icon"><i data-lucide="award"></i></div>
+                                <h3>CCNA: Intro to Networks</h3>
+                                <p>Cisco Networking Academy • Oct 2025</p>
+                            </article>
+                            <article class="certification-card reveal delay-400">
+                                <div class="certification-icon"><i data-lucide="shield-check"></i></div>
+                                <h3>Intro to Cybersecurity</h3>
+                                <p>Cisco Networking Academy • May 2025</p>
+                            </article>
+                            <article class="certification-card reveal delay-500">
+                                <div class="certification-icon"><i data-lucide="rocket"></i></div>
+                                <h3>IDE Bootcamp 2025</h3>
+                                <p>IIT Jammu (AICTE, MOE) • Feb 2025</p>
+                            </article>
+                            <article class="certification-card reveal delay-600">
+                                <div class="certification-icon"><i data-lucide="users"></i></div>
+                                <h3>NSS Volunteer</h3>
+                                <p>27th National Youth Festival, GoI • Jan 2024</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
 
-        <!-- Hobbies Section -->
-        <section id="hobbies" class="section hobbies">
-            <div class="stars-layer-1"></div>
-            <div class="stars-layer-2"></div>
-            <div class="stars-layer-3"></div>
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Hobbies & Interests</h2>
-                </div>
-                <div class="hobbies-grid">
-                    <article class="hobby-card reveal delay-100">
-                        <div class="hobby-icon"><i data-lucide="camera"></i></div>
-                        <h3>Mobile photography</h3>
-                        <p>Capturing moments and exploring visual storytelling through the lens.<span
-                                class="hobby-skill">Creativity • Observation</span></p>
-                        <a href="photography.html" class="btn btn-primary btn-sm" style="margin-top: 1rem;">View
-                            Gallery</a>
-                    </article>
-                    <article class="hobby-card reveal delay-200">
-                        <div class="hobby-icon"><i data-lucide="pen-tool"></i></div>
-                        <h3>Writing</h3>
-                        <p>Expressing ideas through words, from technical blogs to creative pieces.<span
-                                class="hobby-skill">Communication • Expression</span></p>
-                    </article>
-                    <article class="hobby-card reveal delay-300">
-                        <div class="hobby-icon"><i data-lucide="palette"></i></div>
-                        <h3>Sketching</h3>
-                        <p>Creating art through pencil sketches and digital illustrations.<span
-                                class="hobby-skill">Creativity • Patience</span></p>
-                        <a href="sketching.html" class="btn btn-primary btn-sm" style="margin-top: 1rem;">View
-                            Gallery</a>
-                    </article>
-                </div>
+                <!-- Hobbies Section -->
+                <section id="hobbies" class="section hobbies">
+                    <div class="stars-layer-1"></div>
+                    <div class="stars-layer-2"></div>
+                    <div class="stars-layer-3"></div>
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">Hobbies & Interests</h2>
+                        </div>
+                        <div class="hobbies-grid">
+                            <article class="hobby-card reveal delay-100">
+                                <div class="hobby-icon"><i data-lucide="camera"></i></div>
+                                <h3>Mobile photography</h3>
+                                <p>Capturing moments and exploring visual storytelling through the lens.<span
+                                        class="hobby-skill">Creativity • Observation</span></p>
+                                <a href="photography.html" class="btn btn-primary btn-sm" style="margin-top: 1rem;">View
+                                    Gallery</a>
+                            </article>
+                            <article class="hobby-card reveal delay-200">
+                                <div class="hobby-icon"><i data-lucide="pen-tool"></i></div>
+                                <h3>Writing</h3>
+                                <p>Expressing ideas through words, from technical blogs to creative pieces.<span
+                                        class="hobby-skill">Communication • Expression</span></p>
+                            </article>
+                            <article class="hobby-card reveal delay-300">
+                                <div class="hobby-icon"><i data-lucide="palette"></i></div>
+                                <h3>Sketching</h3>
+                                <p>Creating art through pencil sketches and digital illustrations.<span
+                                        class="hobby-skill">Creativity • Patience</span></p>
+                                <a href="sketching.html" class="btn btn-primary btn-sm" style="margin-top: 1rem;">View
+                                    Gallery</a>
+                            </article>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
+        </div>
 
         <!-- Contact Section -->
         <section id="contact" class="section contact">
@@ -690,19 +723,6 @@
             revealObserver.observe(el);
         });
 
-        // Hero Scroll Parallax
-        const heroContent = document.querySelector('.hero-main-content');
-        window.addEventListener('scroll', () => {
-            const scroll = window.pageYOffset;
-            if (heroContent && scroll < window.innerHeight) {
-                const opacity = 1 - (scroll / (window.innerHeight * 0.8));
-                const scale = 1 - (scroll / (window.innerHeight * 5));
-                const translateY = scroll * 0.3;
-
-                heroContent.style.opacity = Math.max(0, opacity);
-                heroContent.style.transform = `scale(${Math.max(0.9, scale)}) translateY(${translateY}px)`;
-            }
-        });
 
         // Read More Toggle Logic
         document.querySelectorAll('.read-more-btn').forEach(btn => {
@@ -715,6 +735,136 @@
                 }
             });
         });
+
+        // GSAP Horizontal Scroll for Projects
+        gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+        // Layered Hero Scroll Transition
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            gsap.to(heroSection, {
+                scrollTrigger: {
+                    trigger: heroSection,
+                    start: "top top",
+                    endTrigger: "#about",
+                    end: "top top",
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: true,
+                    invalidateOnRefresh: true,
+                }
+            });
+        }
+
+        // About Section Scrolling Word Reveal (Sequential)
+        const aboutTextContainer = document.querySelector('.about-text');
+        const aboutDescriptions = document.querySelectorAll('.about-description');
+
+        if (aboutTextContainer && aboutDescriptions.length > 0) {
+            let allWords = [];
+
+            // Split and wrap words in each paragraph
+            aboutDescriptions.forEach((element) => {
+                const text = element.textContent.trim();
+                const words = text.split(/\s+/);
+                element.innerHTML = words.map(word => `<span class="reveal-word" style="display: inline-block; opacity: 0; transform: translateY(10px); margin-right: 0.3em;">${word}</span>`).join('');
+                const spans = Array.from(element.querySelectorAll('.reveal-word'));
+                allWords = allWords.concat(spans);
+            });
+
+            // Single timeline for all words across all paragraphs
+            gsap.to(allWords, {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                stagger: 0.1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: aboutTextContainer,
+                    start: "top 80%",
+                    end: "bottom 60%", // Extended end point for the longer sequence
+                    scrub: 1,
+                    toggleActions: "play none none reverse"
+                }
+            });
+        }
+
+        // Resume Section Transition (Experience to Education)
+        const resumeSection = document.querySelector('#experience');
+        const resumeGrid = document.querySelector('.resume-grid');
+        const experienceCol = document.querySelector('.work-experience');
+        const educationCol = document.querySelector('.education');
+
+        if (resumeSection && experienceCol && educationCol && window.innerWidth > 992) {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: resumeSection,
+                    start: "top 80px", // Offset for fixed navbar
+                    end: "+=200%",
+                    pin: true,
+                    scrub: 1,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                }
+            });
+
+            // Initial state: Education hidden, Experience centered and zoomed
+            gsap.set(educationCol, { y: 100, visibility: 'hidden' });
+            gsap.set(experienceCol, { 
+                scale: 1.1, 
+                xPercent: 50, // Center in the 2-column grid
+                transformOrigin: "top center" 
+            });
+
+            tl.to(experienceCol, {
+                scale: 1,
+                xPercent: 0, // Move to final left position
+                duration: 1.5,
+                ease: "power1.inOut"
+            })
+                .to(educationCol, {
+                    y: 0,
+                    visibility: 'visible',
+                    duration: 1,
+                    ease: "power1.out"
+                }, "-=0.5");
+        }
+
+        const projectTrack = document.querySelector('.projects-track');
+        if (projectTrack) {
+            gsap.to(projectTrack, {
+                x: () => -(projectTrack.scrollWidth - window.innerWidth),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".projects",
+                    start: "top top",
+                    end: () => `+=${projectTrack.scrollWidth}`,
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                }
+            });
+        }
+
+        // Certifications to Hobbies Horizontal Scroll
+        const certsHobbiesWrapper = document.querySelector('.certs-hobbies-wrapper');
+        const certsHobbiesTrack = document.querySelector('.certs-hobbies-track');
+        if (certsHobbiesWrapper && certsHobbiesTrack && window.innerWidth > 992) {
+            gsap.to(certsHobbiesTrack, {
+                x: "-50%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: certsHobbiesWrapper,
+                    start: "top top",
+                    end: "+=150%",
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                    invalidateOnRefresh: true,
+                }
+            });
+        }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
     <script src="../js/star_generator.js"></script>
