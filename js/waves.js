@@ -6,7 +6,7 @@ let waveSettings = {
     speed: 0.015,
     amplitude: 40,
     wavelength: 180,
-    parallaxFactor: 0.15
+    parallaxFactor: 0
 }
 
 
@@ -137,7 +137,7 @@ waveThemeObs.observe(document.documentElement, { attributes: true, attributeFilt
 initWaves();
 animateWaves();
 
-// Watch multiple sections
+// Watch multiple sections except those with pinning (to avoid flicker)
 document.querySelectorAll('.skills, .projects, .certifications, .contact').forEach(sec => {
     new ResizeObserver(initWaves).observe(sec);
 });

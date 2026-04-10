@@ -12,7 +12,7 @@
     --bg-primary: #0a0a0f;
     --bg-secondary: #12121a;
     --bg-tertiary: #1a1a24;
-    --bg-card: #242430;
+    --bg-card: rgba(255, 255, 255, 0.03); /* Unified glass card background */
     --hero-transition-bg: rgba(10, 10, 15, 0.8);
     --accent-primary: #2563eb;
     --accent-secondary: #60a5fa;
@@ -37,29 +37,34 @@
     --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
-html,
-body {
+html {
     overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
-    scroll-behavior: smooth;
+    /* Removed scroll-behavior: smooth as it conflicts with GSAP ScrollTrigger */
+}
+
+body {
+    width: 100%;
+    overflow: visible;
 }
 
 /* Custom Scrollbar */
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
     width: 10px;
 }
 
-::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
     background: var(--bg-primary);
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
     background: var(--accent-primary);
     border-radius: 10px;
     border: 3px solid var(--bg-primary);
 }
 
-::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover {
     background: var(--accent-secondary);
 }
 
@@ -129,7 +134,7 @@ img {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
     position: relative;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.8rem; /* Space for underline */
     margin-bottom: 0.5rem;
     display: inline-block;
 }
@@ -138,9 +143,9 @@ img {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
+    left: 0;
+    transform: none;
+    width: 100%; /* Match text length */
     height: 4px;
     background: var(--accent-gradient);
     border-radius: 2px;
@@ -469,14 +474,15 @@ img {
 
 /* ==================== HERO SECTION ==================== */
 .hero {
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 600px;
     display: flex;
     align-items: center;
     padding-top: 80px;
     background: var(--bg-primary);
     position: relative;
-    overflow: hidden;
-    z-index: 1; /* Pin at the bottom layer */
+    overflow: hidden; /* Clips dotCanvas artifacts at the edges */
+    z-index: 1;
 }
 
 /* Layered transition helper */
@@ -752,8 +758,9 @@ img {
 
 .about-card {
     background: var(--bg-card);
+    backdrop-filter: blur(10px);
     padding: 1.25rem;
-    border-radius: 12px;
+    border-radius: 16px;
     text-align: center;
     border: 1px solid var(--border-color);
     transition: var(--transition);
@@ -844,28 +851,34 @@ img {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem 2rem;
 }
 
 .skill-category {
-    background: var(--bg-secondary);
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
+    background: transparent;
+    padding: 0;
+    border: none;
 }
 
 .skill-category-title {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    gap: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
     color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
 }
 
-.category-icon {
-    font-size: 1.25rem;
+.skill-category-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .skill-tags {
@@ -875,19 +888,23 @@ img {
 }
 
 .skill-tag {
-    background: var(--bg-card);
-    color: var(--text-primary);
-    padding: 0.4rem 0.9rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    border: 1px solid var(--border-color);
-    transition: var(--transition);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary);
+    padding: 0.55rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .skill-tag:hover {
-    background: var(--accent-primary);
+    background: rgba(37, 99, 235, 0.1);
     border-color: var(--accent-primary);
+    color: var(--text-primary);
+    transform: translateY(-2px);
 }
 
 .projects,
@@ -917,6 +934,7 @@ img {
 
 .project-card {
     background: var(--bg-card);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid var(--border-color);
@@ -1071,7 +1089,7 @@ img {
 
 /* ==================== TIMELINE (Education & Experience) ==================== */
 .education {
-    background: var(--bg-primary);
+    background: transparent;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -1102,7 +1120,6 @@ img {
 }
 
 .resume-col {
-    transition: opacity 0.3s ease;
     will-change: transform, opacity;
     padding-bottom: 1rem; /* Safety space for last card radius */
 }
@@ -1249,12 +1266,12 @@ img {
 
 .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
 }
 
 .certification-card {
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--bg-card);
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
     padding: 2rem;
@@ -1347,8 +1364,9 @@ img {
 
 .hobby-card {
     background: var(--bg-card);
+    backdrop-filter: blur(10px);
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 16px;
     border: 1px solid var(--border-color);
     text-align: center;
     transition: var(--transition);
@@ -1407,9 +1425,10 @@ img {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: var(--bg-secondary);
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
     padding: 1rem 1.5rem;
-    border-radius: 10px;
+    border-radius: 16px;
     border: 1px solid var(--border-color);
     transition: var(--transition);
     text-align: left;
@@ -1435,9 +1454,10 @@ img {
 }
 
 .message-box {
-    background: var(--bg-secondary);
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
     padding: 2.5rem;
-    border-radius: 12px;
+    border-radius: 16px;
     border: 1px solid var(--border-color);
     text-align: center;
 }
@@ -1524,16 +1544,40 @@ img {
     transition-delay: 600ms;
 }
 
+.delay-700 {
+    transition-delay: 700ms;
+}
+
+.delay-800 {
+    transition-delay: 800ms;
+}
+
 /* ==================== FOOTER ==================== */
 .footer {
-    background: var(--bg-secondary);
-    padding: 1.5rem 0;
+    background: transparent;
+    padding: 3rem 0 2rem; /* Adjusted for centered balance */
+}
+
+.footer-line {
+    width: 60%;
+    height: 1px;
+    background: var(--border-color);
+    margin: 0 auto 1.5rem;
+    opacity: 0.5;
 }
 
 .footer-bottom {
     color: var(--text-muted);
     font-size: 0.85rem;
     text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.contact {
+    padding-bottom: 0 !important;
 }
 
 /* ==================== RESPONSIVE DESIGN ==================== */
@@ -1568,11 +1612,21 @@ img {
     .hobbies-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
 }
 
 @media (max-width: 768px) {
     :root {
         --section-padding: 3.5rem 0;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .nav-menu {
@@ -1639,7 +1693,8 @@ img {
     }
 
     .skills-grid,
-    .projects-grid {
+    .projects-grid,
+    .certifications-grid {
         grid-template-columns: 1fr;
     }
 

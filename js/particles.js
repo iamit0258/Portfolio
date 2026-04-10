@@ -98,16 +98,19 @@ const initParticlePattern = () => {
     const resize = () => {
         const hero = document.querySelector('.hero');
         if (!hero) return;
-        canvas.width = hero.clientWidth;
-        canvas.height = hero.clientHeight;
+        // Use Math.floor to avoid sub-pixel rendering issues on canvas
+        canvas.width = Math.floor(hero.clientWidth);
+        canvas.height = Math.floor(hero.clientHeight);
         init();
     };
 
     const init = () => {
         particles = [];
-        const gap = 35; // Slightly sparser for minimalism
-        for (let y = 0; y < canvas.height + gap; y += gap) {
-            for (let x = 0; x < canvas.width + gap; x += gap) {
+        const gap = 35; 
+        // Start with an offset so dots aren't cut off at the top/left edges
+        // and ensure we don't draw a row exactly at the bottom/right edges (artifact prevention)
+        for (let y = gap / 2; y < canvas.height; y += gap) {
+            for (let x = gap / 2; x < canvas.width; x += gap) {
                 particles.push(new Particle(x, y, canvas, ctx));
             }
         }
