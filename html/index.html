@@ -249,6 +249,19 @@
                                     </ul>
                                 </div>
                             </div>
+                            <div class="timeline-item reveal">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Mar 2025 – May 2025</span>
+                                    <h3>AI Intern</h3>
+                                    <h4>Datapedia.ai (Go Hype Media)</h4>
+                                    <ul>
+                                        <li>Researched and evaluated AI tools and emerging technologies for practical applications.</li>
+                                        <li>Built an AI-powered voice assistant using Python and Google Gemini API for multilingual voice interactions.</li>
+                                        <li>Documented AI use cases and identified workflow automation opportunities.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -820,6 +833,13 @@
         const educationCol = document.querySelector('.education');
 
         if (resumeSection && experienceCol && educationCol && window.innerWidth > 992) {
+            const experienceItems = experienceCol.querySelectorAll('.timeline-item');
+            const educationItems = educationCol.querySelectorAll('.timeline-item');
+
+            // Remove reveal class on desktop to prevent IntersectionObserver conflicts
+            experienceItems.forEach(el => el.classList.remove('reveal'));
+            educationItems.forEach(el => el.classList.remove('reveal'));
+
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: resumeSection,
@@ -840,18 +860,40 @@
                 transformOrigin: "top center"
             });
 
-            tl.to(experienceCol, {
+            // Set initial state for items inside the pinned containers
+            gsap.set(experienceItems, { opacity: 0, y: 30 });
+            gsap.set(educationItems, { opacity: 0, y: 30 });
+
+            // 1. Reveal Work Experience items first (staggered)
+            tl.to(experienceItems, {
+                opacity: 1,
+                y: 0,
+                stagger: 0.3,
+                duration: 1,
+                ease: "power2.out"
+            })
+            // 2. Move Work Experience to the left
+            .to(experienceCol, {
                 scale: 1,
                 xPercent: 0, // Move to final left position
                 duration: 1.5,
                 ease: "power1.inOut"
             })
-                .to(educationCol, {
-                    y: 0,
-                    visibility: 'visible',
-                    duration: 1,
-                    ease: "power1.out"
-                }, "-=0.5");
+            // 3. Bring in the Education column
+            .to(educationCol, {
+                y: 0,
+                visibility: 'visible',
+                duration: 1,
+                ease: "power1.out"
+            }, "-=0.5")
+            // 4. Reveal Education items (staggered)
+            .to(educationItems, {
+                opacity: 1,
+                y: 0,
+                stagger: 0.3,
+                duration: 1,
+                ease: "power2.out"
+            }, "-=0.5");
         }
 
         const projectTrack = document.querySelector('.projects-track');
