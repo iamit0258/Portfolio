@@ -7,7 +7,7 @@
     <link rel="canonical" href="https://www.amitkk.in/">
     <meta name="google-site-verification" content="gdvLZeo7UvXTIZTP40YXUggchUFi0RsJjz7NucVaXLI" />
     <meta name="description"
-        content="B.Tech Graduate in Electronics & Computer Engineering and ex-Frontend & GenAI Intern at AgriDoot. Building AI-driven and full-stack applications, specializing in GenAI, NLP, and web development.">
+        content="B.Tech Graduate in Electronics & Computer Engineering and ex-Frontend & GenAI Intern at AgriDoot. Specializing in Python, Web Development, AI, and RAG — building intelligent full-stack applications.">
     <title>Amit Kumar Kuswaha | AI-Powered Full-Stack Developer</title>
 
     <!-- Open Graph / Facebook -->
@@ -15,7 +15,7 @@
     <meta property="og:url" content="https://www.amitkk.in/">
     <meta property="og:title" content="Amit Kumar Kuswaha | AI-Powered Full-Stack Developer Portfolio">
     <meta property="og:description"
-        content="B.Tech Graduate in Electronics & Computer Engineering and ex-Frontend & GenAI Intern at AgriDoot building AI-driven and full-stack applications. View my work in GenAI, NLP, and robotics.">
+        content="B.Tech Graduate specializing in Python, Web Development, AI, and RAG. Ex-Frontend & GenAI Intern at AgriDoot building intelligent full-stack applications.">
     <meta property="og:image" content="https://www.amitkk.in/photos/ak.jpeg">
 
     <!-- Twitter -->
@@ -23,7 +23,7 @@
     <meta property="twitter:url" content="https://www.amitkk.in/">
     <meta property="twitter:title" content="Amit Kumar Kuswaha | AI-Powered Full-Stack Developer Portfolio">
     <meta property="twitter:description"
-        content="B.Tech Graduate in Electronics & Computer Engineering and ex-Frontend & GenAI Intern at AgriDoot building AI-driven and full-stack applications. View my work in GenAI, NLP, and robotics.">
+        content="B.Tech Graduate specializing in Python, Web Development, AI, and RAG. Ex-Frontend & GenAI Intern at AgriDoot building intelligent full-stack applications.">
     <meta property="twitter:image" content="https://www.amitkk.in/photos/ak.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <meta name="keywords"
-        content="Amit Kumar Kuswaha, AgriDoot, AI Developer, Full-Stack Developer, GUDPALS, Project A, AI Assistant, Senior Citizen Platform, GenAI, NLP">
+        content="Amit Kumar Kuswaha, Python Developer, Web Development, AI Developer, RAG, Full-Stack Developer, AgriDoot, GenAI, NLP, LLMs, GUDPALS, Project A">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -42,7 +42,7 @@
       "url": "https://www.amitkk.in/",
       "image": "https://www.amitkk.in/photos/ak.jpeg",
       "jobTitle": "Ex-Frontend & GenAI Intern at AgriDoot",
-      "knowsAbout": ["Artificial Intelligence", "Full-Stack Web Development", "Natural Language Processing", "GenAI", "Web Scraping"],
+      "knowsAbout": ["Python", "Web Development", "Artificial Intelligence", "RAG", "Full-Stack Web Development", "Natural Language Processing", "GenAI", "LLMs"],
       "sameAs": [
         "https://www.linkedin.com/in/iamit105",
         "https://github.com/iamit0258",
@@ -82,6 +82,7 @@
     <!-- GSAP for Smooth Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
 </head>
 
@@ -721,22 +722,59 @@
             navMenu.classList.toggle('active');
         });
 
-        // Close menu when clicking a link + Smooth scroll fix for Home
+        // Close menu when clicking a link + Smooth scroll for all sections
         document.querySelectorAll('.nav-link, .nav-logo').forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
 
-                if (href === '#home') {
+                if (href && href.startsWith('#')) {
                     e.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                }
 
-                if (link.classList.contains('nav-link')) {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
+                    // Close mobile menu
+                    if (link.classList.contains('nav-link')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+
+                    if (href === '#home') {
+                        gsap.to(window, { scrollTo: 0, duration: 1, ease: 'power2.inOut' });
+                        return;
+                    }
+
+                    // For certifications & hobbies, we need to scroll to the
+                    // correct position within the horizontal GSAP scroll wrapper
+                    const wrapper = document.querySelector('.certs-hobbies-wrapper');
+                    if (wrapper && (href === '#certifications' || href === '#hobbies')) {
+                        const wrapperST = ScrollTrigger.getAll().find(st => st.trigger === wrapper);
+                        if (wrapperST) {
+                            let targetScroll;
+                            if (href === '#certifications') {
+                                // Scroll to the start of the wrapper (certifications panel is first)
+                                targetScroll = wrapperST.start + 1;
+                            } else {
+                                // Scroll to the end of the wrapper (hobbies panel is second)
+                                targetScroll = wrapperST.end - 1;
+                            }
+                            gsap.to(window, { scrollTo: targetScroll, duration: 1.2, ease: 'power2.inOut' });
+                            return;
+                        }
+                    }
+
+                    // Default: smooth scroll to the target section
+                    const target = document.querySelector(href);
+                    if (target) {
+                        gsap.to(window, {
+                            scrollTo: { y: target, offsetY: 80 },
+                            duration: 1,
+                            ease: 'power2.inOut'
+                        });
+                    }
+                } else {
+                    // Non-hash links (like resume) — just close the menu
+                    if (link.classList.contains('nav-link')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
                 }
             });
         });
@@ -805,7 +843,7 @@
         });
 
         // GSAP Horizontal Scroll for Projects
-        gsap.registerPlugin(ScrollTrigger, TextPlugin);
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
 
         // Layered Hero Scroll Transition
         const heroSection = document.querySelector('.hero');
